@@ -22,5 +22,6 @@
 
 Let's take a simple example: 
   
-  ```bash console.log(message);
-          var message = "This variable has been hoisted";
+  ```bash 
+        console.log(message);
+        var message = "This variable has been hoisted";
