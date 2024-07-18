@@ -39,3 +39,33 @@
   function getName(name) {
    console.log(name);
   }
+  ```
+
+## Q.3 "let", "var", or "const" ?
+
+- "var" has function-level scrope, whereas "let" or "const" has a block level scope.
+- variables declared with the "var" and "let" can be reassigned whereas the "const" cannot be reassigned.
+- variables declared with "var" are hoisted, whereas "let" and "const" are hoisted but not initialized.
+- variables declared with "var" don't have a temoporal dead zone whereas "let" and "const" have a temoparal dead zone.
+
+```bash
+// console.log(a);  // undefined
+// console.log(b);  // ReferenceError: Cannot access 'b' before initialization
+// console.log(c);  // ReferenceError: Cannot access 'c' before initialization
+
+var a = 10;
+a = 40;
+console.log(a); // 40
+
+let b = 20;
+b = 50;
+console.log(b); // 50
+
+const c = 30;
+c = 60;
+console.log(c); // TypeError: Assignment to constant variable.
+
+// console.log(a);  //10
+// console.log(b);  //20
+// console.log(c);  //30
+```
