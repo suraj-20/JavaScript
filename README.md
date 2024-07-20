@@ -69,3 +69,22 @@ console.log(c); // TypeError: Assignment to constant variable.
 // console.log(b);  //20
 // console.log(c);  //30
 ```
+
+## Q.4 What is clousre?
+
+- A clousre is a combination of a function bundled (or enclosed) together with its lexical environment within which the function was declared i.e, It is an inner function that has access to the outer or enclosing functions's variables, functions and other data even after the outer function has finished its execution.
+- The clousre has three scope chains.
+- i. Own scope ehrere variables defined between its curle brackets.
+- ii. Outer function variables.
+- iii. Globle variables.
+
+```bash
+function outer() {
+  var a = 10;
+  function inner() {
+    console.log(a);  // 10
+  }
+  return inner;
+}
+outer();
+```
