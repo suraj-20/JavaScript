@@ -18,7 +18,7 @@
 
 ## Q.2 Hoisting in JavaScript?
 
-- Hoisting in Javascript mechenism where variables, function declarations, and classes are moved to the top of their scope before code execution. Remember that Javascript only hoists declarations, not initialsation.
+- Hoisting in Javascript mechenism where variables, function declarations, and classes are moved to the top of their execution. scope before code Remember that Javascript only hoists declarations, not initialsation.
 
 - Let's take a simple example:
 
@@ -74,9 +74,11 @@ console.log(c); // TypeError: Assignment to constant variable.
 
 - A clousre is a combination of a function bundled (or enclosed) together with its lexical environment within which the function was declared i.e, It is an inner function that has access to the outer or enclosing functions's variables, functions and other data even after the outer function has finished its execution.
 - The clousre has three scope chains.
-- i. Own scope ehrere variables defined between its curle brackets.
-- ii. Outer function variables.
-- iii. Globle variables.
+  i. Own scope ehrere variables defined between its curle brackets.
+  ii. Outer function variables.
+  iii. Globle variables.
+
+Example 1:
 
 ```bash
 function outer() {
@@ -87,4 +89,104 @@ function outer() {
   return inner;
 }
 outer();
+```
+
+Example 2:
+
+```bash
+function Welcome(name) {
+  var greetingInfo = function (message) {
+    console.log(message + " " + name);
+  }
+  return greetingInfo;
+}
+
+var myFunction = Welcome("John");
+myFunction("Welcome")  // Welcome John
+myFunction("Hello Mr.")  // Hello Mr. John
+```
+
+## Q.5 What is callback function and callback hell?
+
+- In Javascript, callbacks are commanly used to handle asynchronous operations.
+
+- A callback function is a function passed into another function as an argument. This function invoked inside the outer function to complete an action.
+
+Example
+
+```bash
+function fetchData(url, callback) {
+  setTimeout(() => {
+    const data = "Some data from server";
+    callback(data);
+  }, 1000);
+}
+
+function processData(data) {
+  console.log("Processing data: ", data);
+}
+
+fetchData("http://example.com/data", processData);X
+```
+
+In this example, the fetchData function takes a URL and a callback function as arguments. After fetching the data from server (simulated using setTimeout), it calls the callback function and parse the retrived data to it.
+
+### Callback Hell :-
+
+- Callback hell, also known as "Pyramid of doom" is a term used in JS programming to describe a situation where multiple nested callbacks are used within asynchronous function.
+
+- "Callback Hell occurs when asynchronous operation depend on the result of previous asynchronous operations, resulting in deeply nested and often hard-to-read code".
+
+Let's see example of callback hell.
+
+```bash
+fs.readFile('file1.txt', 'utf8', function (err, data) {
+  if (err) {
+    console.error(err);
+  } else {
+    fs.readFile('file2.txt', 'utf8', function (err, data) {
+      if (err) {
+        console.error(err);
+      } else {
+        fs.readFile('file3.txt', 'utf8', function (err, data) {
+          if (err) {
+            console.error(err);
+          } else {
+            // Continue with more nested callbacks...
+          }
+        });
+      }
+    });
+  }
+});
+```
+
+- To avoid callback hell, modern JS provides alternatives like Pormises and async/await. Here the same code using Promises.
+
+```bash
+const readFile = (file) => {
+  return new Promise((resolve, reject) => {
+    fs.readFile(file, 'utf8', (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
+  });
+};
+
+readFile("file1.txt")
+  .then((data1) => {
+    return readFile("file2.txt");
+  })
+  .then((data2) => {
+    return readFile("file3.txt");
+  })
+  .then((data3) => {
+    return readFile("file4.txt");
+  })
+  .catch((err) => {
+    console.error(err);
+  })
 ```
