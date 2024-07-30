@@ -112,7 +112,7 @@ myFunction("Hello Mr.")  // Hello Mr. John
 
 - A callback function is a function passed into another function as an argument. This function invoked inside the outer function to complete an action.
 
-Example
+Example 1:
 
 ```bash
 function fetchData(url, callback) {
@@ -126,7 +126,22 @@ function processData(data) {
   console.log("Processing data: ", data);
 }
 
-fetchData("http://example.com/data", processData);X
+fetchData("http://example.com/data", processData);
+```
+
+Example 2:
+
+```bash
+function callbackFunction(name) {
+  console.log("Hello " + name);
+}
+
+function outerFunction(callback) {
+  let name = prompt("Please enter your name: ");
+  callback(name);
+}
+
+outerFunction(callbackFunction);
 ```
 
 In this example, the fetchData function takes a URL and a callback function as arguments. After fetching the data from server (simulated using setTimeout), it calls the callback function and parse the retrived data to it.
@@ -190,3 +205,7 @@ readFile("file1.txt")
     console.error(err);
   })
 ```
+
+## Q.5.1 Why do we need callback?
+
+- The callbacks are needed because JS is an event driven langauage. That means instead of waiting for a response Js will keep executing while listening for other events.
