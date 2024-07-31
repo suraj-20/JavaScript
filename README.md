@@ -44,8 +44,11 @@ function getName(name) {
 ## Q.3 "let", "var", or "const" ?
 
 "var" has function-level scrope, whereas "let" or "const" has a block level scope.
+
 variables declared with the "var" and "let" can be reassigned whereas the "const" cannot be reassigned.
+
 variables declared with "var" are hoisted, whereas "let" and "const" are hoisted but not initialized.
+
 variables declared with "var" don't have a temoporal dead zone whereas "let" and "const" have a temoparal dead zone.
 
 ```bash
@@ -147,7 +150,7 @@ outerFunction(callbackFunction);
 
 In this example, the fetchData function takes a URL and a callback function as arguments. After fetching the data from server (simulated using setTimeout), it calls the callback function and parse the retrived data to it.
 
-### Callback Hell :
+### Callback Hell :-
 
 Callback hell, also known as "Pyramid of doom" is a term used in JS programming to describe a situation where multiple nested callbacks are used within asynchronous function.
 
@@ -258,3 +261,30 @@ fatchData
 ```
 
 Promise chaining : The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining.
+
+It involeve chaining multiple .then() methods to a Promise to perform a series of tasks in a specific order.
+
+Example of Promise chaining :
+
+```bash
+new Promise(function(resolce, reject) {
+  setTimeout(() => {
+    resolve(1)
+  }, 1000)
+})
+.then((result) => {
+  console.log(result);  // 1
+  return result * 1;
+})
+.then((result) => {
+  console.log(result);  // 2
+  return result * 2;
+})
+.then((result) => {
+  console.log(result);  // 6
+  return result * 3;
+})
+.catch((err) => {
+  console.log(err)
+})
+```
