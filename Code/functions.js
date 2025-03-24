@@ -94,3 +94,26 @@ callMe();
 (function () {
   console.log("Immidiately called after is is created");
 })();
+
+// Currying function
+
+const sumOfThreeNumbers = (a, b, c) => {
+  return a + b + c;
+}
+
+console.log(sumOfThreeNumbers(1, 2, 3));  // 6
+
+
+const sumOfTreeNumbersWithCurrying = (a) => {
+  return (b) => {
+    return (c) => {
+      return a + b + c;
+    }
+  }
+}
+
+const aFunction = sumOfTreeNumbersWithCurrying(3);  // Returns a function
+const aanotherFunction = aFunction(2);   // Return a function agarin
+const andAnotherFunction = aanotherFunction(1);   // Return value
+
+console.log(andAnotherFunction); // 6

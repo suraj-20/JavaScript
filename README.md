@@ -415,5 +415,33 @@ callMe(); // Function get called
 
 ```
 
+## What is a currying function ?
 
+A function that coverts a multi-arguments funtion into a single-argument function by calling it with single argument multiple times.
+
+Lets's see an example:
+
+```bash
+// A. Multi-argument function
+const sumOfThreeNumbers = (a, b, c) => {
+  return a + b + c;
+}
+
+sumOfThreeNumbers(1, 2, 3); // 6
+
+// B. With curry function
+const sumOfTreeNumbersWithCurrying = (a) => {
+  return (b) => {
+    return (c) => {
+      return a + b + c;
+    }
+  }
+}
+
+const aFunction = sumOfTreeNumbersWithCurrying(3);  // Returns a function
+const anotherFunction = aFunction(2);   // Return a function agarin
+const andAnotherFunction = anotherFunction(1);   // Return value
+
+console.log(andAnotherFunction); // 6
+```
 
