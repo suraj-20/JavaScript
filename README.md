@@ -321,3 +321,19 @@ fetchData()
 ```
 
 In this example, the fetch function is defined as async function, and it uses await keyword to pause the execution and wait for the fetch and json operations, effectively working with the Promises in a way that resembles synchronous code.
+
+## Q.7 What is arrow function ?
+
+A shorter syntex for a normal function declaration. In case of single line function, we don't need to use the "return" keyword to return the value.
+
+Let's see an example:
+ 
+```bash
+// Ways to write an arrow function
+// 1. 
+const sum = (a, b) => {
+  return a + b;
+}
+// 2.
+const sum = (a, b) => a + b;
+```
