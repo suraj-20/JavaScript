@@ -327,13 +327,47 @@ In this example, the fetch function is defined as async function, and it uses aw
 A shorter syntex for a normal function declaration. In case of single line function, we don't need to use the "return" keyword to return the value.
 
 Let's see an example:
- 
+
 ```bash
 // Ways to write an arrow function
-// 1. 
+// 1.
 const sum = (a, b) => {
   return a + b;
 }
 // 2.
 const sum = (a, b) => a + b;
+```
+
+## What is High Order Funtion ?
+
+A high order function is a function that either accepts a function as arguments or return a function or both.
+
+Lets's see an example:
+
+```bash
+// A. Accepts function as argument
+function foo(callback) {
+  // Calling callback function
+  callback(); // I'm a callback function'
+}
+
+function bar() {
+  console.log("I'm a callback function");
+}
+
+// Passing bar function in foo so it gets called inside foo function
+foo(bar);
+
+// B. Return a function
+
+function foo() {
+  return function () {
+    console.log('Logging from returned function');
+  };
+}
+
+const anotherFunction = foo()
+anotherFunction() // Logging from returned function
+
+// TIP - A function that returns another function follows the concept of closures.
 ```

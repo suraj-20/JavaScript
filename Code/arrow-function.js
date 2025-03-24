@@ -1,10 +1,22 @@
-const sum = (a, b) => {
-    console.log(a + b);
-    return a + b;
+// A. Accepts function as argument
+function foo(callback) {
+  // Calling callback function
+  callback(); // I'm a callback function
 }
 
-sum(10, 15);
+function bar() {
+  console.log("I'm a callback function");
+}
 
-const sum2 = (a, b) => console.log(a + b);
+// Passing bar function in foo so it gets called inside foo function
+foo(bar);
 
-sum2(20, 25);
+// B. Returns a function
+function foo() {
+  return function () {
+    console.log("Logging from returned function");
+  };
+}
+
+const anotherFunction = foo();
+anotherFunction(); // Logging from returned function
