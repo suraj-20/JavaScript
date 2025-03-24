@@ -371,3 +371,25 @@ anotherFunction() // Logging from returned function
 
 // TIP - A function that returns another function follows the concept of closures.
 ```
+
+## What is an anonymous function ?
+
+Anonymous functions in javascript are functions that have no name.
+
+All arrow function a anonymous functions.
+
+They can be used as an argument to another function or as an imidiately involked function execution.
+
+```bash
+// A. Assigning to a variable
+const sum = function (a, b) {
+  return a + b;
+};
+
+console.log(sum(2, 4));
+
+// B. As callback function
+[1, 2, 3, 4].forEach(function (item) { // Function inside forEach is anonymous function
+  // Do something with each element
+})
+    
