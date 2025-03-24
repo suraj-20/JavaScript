@@ -392,4 +392,28 @@ console.log(sum(2, 4));
 [1, 2, 3, 4].forEach(function (item) { // Function inside forEach is anonymous function
   // Do something with each element
 })
-    
+```
+
+## What is IIFE ?
+
+IIFE stands for Immidiately Involked Function Expression.
+
+These types of functions are like any other function buy they don't need to called. They are called just after they are created.
+
+Let's see how a normal funtion or IIFE works:
+
+```bash
+function callMe() {
+  console.log('Function get called');
+}
+
+callMe(); // Function get called
+
+(function () {
+  console.log('Immidiately called after it is created');
+})();
+
+```
+
+
+
