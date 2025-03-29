@@ -78,7 +78,7 @@ console.log(c); // TypeError: Assignment to constant variable.
 A clousre is a combination of a function bundled (or enclosed) together with its lexical environment within which the function was declared i.e, It is an inner function that has access to the outer or enclosing functions's variables, functions and other data even after the outer function has finished its execution.
 
 The clousre has three scope chains.
-i. Own scope ehrere variables defined between its curle brackets.
+i. Own scope where variables defined between its curly brackets.
 ii. Outer function variables.
 iii. Globle variables.
 
@@ -218,7 +218,7 @@ The callbacks are needed because JS is an event driven langauage. That means ins
 
 A Promise is used to handle asynchronous operations in JavaScript.
 
-A Promise is an object that may produce a single value some tome in the future with either a resolved value or a reason that it's not resolved (for example, network error).
+A Promise is an object that may produce a single value some time in the future with either a resolved value or a reason that it's not resolved (for example, network error).
 
 Promise have three states:
 i. Pending - It is an initial state of the promise before an operation begins.
