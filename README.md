@@ -474,3 +474,22 @@ console.log(addition(20));
 console.log(addition(20));
 
 ```
+
+### What is setTimeout & setInterval ?
+
+setTimeout - Call the callback funtion only once after a specific period of time.
+setInterval - Call the callback funtion after a perticular interval of time has been passed.
+
+See with an example:
+
+```bash
+
+setTimeout(function () {
+  console.log("I am a callback function of setTimeout.");
+}, 2000);
+
+setInterval(function () {
+  console.log("I am a callback function of setInterval");
+}, 500);
+
+```
