@@ -445,3 +445,32 @@ const andAnotherFunction = anotherFunction(1);   // Return value
 console.log(andAnotherFunction); // 6
 ```
 
+### What is memoization?
+
+A method to increase function performance by caching it's previously calculated result. When the function runs it checks into the caches first, if data exixts then no need to compute else compute or add it to cache and then return the function.
+
+Here cache is stored in an object;
+
+```bash
+
+const memoizAddition = () => {
+  let cache = {};
+
+  return (value) => {
+    if(value in cache) {
+      console.log("Fetching from cache");
+      return cache[value];
+    } else {
+      console.log("Calculating resutl");
+      let result = value + 20;
+      cache[value] = result;
+      return result;
+    }
+  }
+}
+
+const addition = memoizAddition();
+console.log(addition(20));
+console.log(addition(20));
+
+```
