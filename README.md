@@ -493,3 +493,31 @@ setInterval(function () {
 }, 500);
 
 ```
+
+### What is JSON & its methods ?
+
+JSON means Javascript Object Notation. It's a file that consists of key-value pairs and is used for interchanging data between two resources like APIs.
+
+It has two important methods -
+
+JSON.stringify() - It convert javascript object into string.
+JSON.parse() - It convert string to javascript object.
+
+Let's see an example:
+
+```bash
+
+const object = {
+  name: 'Suraj',
+  age: 21,
+};
+
+const stringifiedObject = JSON.stringify(object);
+console.log(stringigiedObject);
+console.log(typeof stringifiedObject);
+
+const parsedObject = JSON.parse(stringifiedObject);
+console.log(parsedObject);
+console.log(typeof parsedObject);
+
+```
