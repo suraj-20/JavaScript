@@ -338,7 +338,7 @@ const sum = (a, b) => {
 const sum = (a, b) => a + b;
 ```
 
-## What is High Order Funtion ?
+## Q.8 What is High Order Funtion ?
 
 A high order function is a function that either accepts a function as arguments or return a function or both.
 
@@ -372,7 +372,7 @@ anotherFunction() // Logging from returned function
 // TIP - A function that returns another function follows the concept of closures.
 ```
 
-## What is an anonymous function ?
+## Q.9 What is an anonymous function ?
 
 Anonymous functions in javascript are functions that have no name.
 
@@ -394,7 +394,7 @@ console.log(sum(2, 4));
 })
 ```
 
-## What is IIFE ?
+## Q.10 What is IIFE ?
 
 IIFE stands for Immidiately Involked Function Expression.
 
@@ -415,7 +415,7 @@ callMe(); // Function get called
 
 ```
 
-## What is a currying function ?
+## Q.11 What is a currying function ?
 
 A function that coverts a multi-arguments funtion into a single-argument function by calling it with single argument multiple times.
 
@@ -445,7 +445,30 @@ const andAnotherFunction = anotherFunction(1);   // Return value
 console.log(andAnotherFunction); // 6
 ```
 
-### What is memoization?
+## Q.12 What is unary function?
+
+A function that has only one argument.
+
+A unary function is a function that except only one argument. It stands for a single argument accepted by a function.
+
+Let's se an Example:
+
+```bash
+
+const unaryFunc = (a) => console.log(a + 10); // 15
+
+unaryFunc(5);
+
+function foo(a) {
+  console.log("I am a unary function.");
+}
+
+function bar(a, b) {
+  console.log("I am not a unary function.");
+}
+```
+
+## Q.13 What is memoization?
 
 A method to increase function performance by caching it's previously calculated result. When the function runs it checks into the caches first, if data exixts then no need to compute else compute or add it to cache and then return the function.
 
@@ -475,7 +498,7 @@ console.log(addition(20));
 
 ```
 
-### What is setTimeout & setInterval ?
+## Q.14 What is setTimeout & setInterval ?
 
 setTimeout - Call the callback funtion only once after a specific period of time.
 setInterval - Call the callback funtion after a perticular interval of time has been passed.
@@ -494,7 +517,7 @@ setInterval(function () {
 
 ```
 
-### What is JSON & its methods ?
+## Q.15 What is JSON & its methods ?
 
 JSON means Javascript Object Notation. It's a file that consists of key-value pairs and is used for interchanging data between two resources like APIs.
 

@@ -117,3 +117,11 @@ const aanotherFunction = aFunction(2);   // Return a function agarin
 const andAnotherFunction = aanotherFunction(1);   // Return value
 
 console.log(andAnotherFunction); // 6
+
+// Unary function
+
+const unaryFunction = (a) => {
+  console.log(a + 10);
+}
+
+unaryFunction(5);
