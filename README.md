@@ -621,3 +621,28 @@ const array = []
 const object = {}
 
 ```
+
+## Q.20 Difference between null and undefined?
+
+null
+
+- It is a value that asigned to a variable which means that the variable points to no object.
+- The type of null is an object.
+- It means the value of variable is absent.
+
+undefine
+
+- It is not a assigned value for a variable. When a variable is declared but not assigned to any value its value is undefined.
+- The type of undefined is undefined.
+- It means even a variable is absent.
+
+Example-
+
+```bash
+let x;
+console.log(x);  // undefined
+
+let x = null;
+console.log(x);  // null
+```
+
