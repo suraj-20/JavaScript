@@ -600,3 +600,24 @@ The job queue (or microtasks) is FIFO structure that holds the callbacks of asyn
 The task queue (or macrotasks) is a FIFO structure holds the callback of async operations (timer like setTimeout, setInterval) that are ready to be executed.
 
 The event loop parmanently monitors wheater the callstack is empty. If the call stack is empty, the event loop into the job queue or task queue and dequeue any callback ready to be executed into the call stack.
+
+## Q.19 What are primitve and non-primitive data Types?
+
+Primitive data types are pre-defined in JS like String, Number, Boolean, NULL, Undefined.
+
+Non-Primitive data types are derived from primitive data types like Array & Object.
+
+```bash
+
+// A. Primitive data types
+const string = 'string'
+const number = 5
+const boolean = true
+const nullValue = null
+const undefinedValue = undefined
+
+// B. Non-Primitive data types
+const array = []
+const object = {}
+
+```
