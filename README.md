@@ -586,3 +586,17 @@ Compilation: The javascript engine compiles the AST into machinve code that can 
 Execution: The javascript engine executes the machine code, following the instructions in the code to perform operations, manipulate data, and call functions. The engine also manages the memory and resources used by the code, allocating and freeing memory as needed.
 
 Garbage Collection: The javascript engine performs garbage collection, which is the process of freeing up memory that is no longer needed by the code. The engine uses a mark-and-sweep algorithm to determine which objects are no longer reachable by the code and reclaims their memory.
+
+## Q.18 What is an Event Loop?
+
+The event loop is a core component of the JS runtime environment. It is responsible for scheduling and executing asynchronous tasks. The event loop works by continuously monitoring two queues: The call stack and the event queue.
+
+The call stack is a stack (LIFO) data structure that stores the functions that are currently being executed (store the execution contaxt created during the code execution).
+
+Web APIs is the place where the async operations (just like setTimeout, fatch, promises) with their callbacks are waiting to complete. It borrows the thread from thread pool to complete the task in the background without blocking the main thread.
+
+The job queue (or microtasks) is FIFO structure that holds the callbacks of async/await, promises, that are ready to be executed.
+
+The task queue (or macrotasks) is a FIFO structure holds the callback of async operations (timer like setTimeout, setInterval) that are ready to be executed.
+
+The event loop parmanently monitors wheater the callstack is empty. If the call stack is empty, the event loop into the job queue or task queue and dequeue any callback ready to be executed into the call stack.
