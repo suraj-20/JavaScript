@@ -544,3 +544,45 @@ console.log(parsedObject);
 console.log(typeof parsedObject);
 
 ```
+
+## Q.16 What is Object Referencing?
+
+The data type in javascript store values in two ways-
+
+By Value - In the case of primitive data type
+
+By Reference - In the case of non-primitive data type
+
+Let's see an example-
+
+```bash
+
+// By value => Primitive data type
+const message = 'Hello';
+const anotherMessage = message;
+
+console.log(message);  // Hello
+console.log(anotherMessage);   // Hello
+
+// By Reference => Primitive data type
+
+const user = {
+  name: 'John';
+}
+
+Here user points to the object which has the **name** property on it.
+```
+
+## Q.17 How does Javascript Engine Work?
+
+The JavaScript engine is responsible for executing JavaScript code and managing the memory and resources used by the code. A JavaScript engine is implemented as part of a web browser or a standalone JavaScript runtime environment, such as Node.js.
+
+The general process for how a javascript engine works is as follows:
+
+Parsing: The Javascript engine parses the code, converting it into an internal representation called an abstract syntax tree(AST). The parser performs syntax checking and generates an error if it encounters any syntax errors.
+
+Compilation: The javascript engine compiles the AST into machinve code that can be executed by the computer's processor. This process is also called just-in-time (JIT) compilation. The machine code is optimized for performance and stored in a cache for later use.
+
+Execution: The javascript engine executes the machine code, following the instructions in the code to perform operations, manipulate data, and call functions. The engine also manages the memory and resources used by the code, allocating and freeing memory as needed.
+
+Garbage Collection: The javascript engine performs garbage collection, which is the process of freeing up memory that is no longer needed by the code. The engine uses a mark-and-sweep algorithm to determine which objects are no longer reachable by the code and reclaims their memory.
